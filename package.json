@@ -10,8 +10,13 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/node": "^22.13.8",
+    "@eslint/js": "^9.21.0",
+    "@types/node": "^22.13.9",
+    "eslint": "^9.21.0",
+    "eslint-config-love": "^118.0.0",
     "git-commit-msg-linter": "^5.0.8",
-    "typescript": "^5.8.2"
+    "globals": "^16.0.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
   }
 }
