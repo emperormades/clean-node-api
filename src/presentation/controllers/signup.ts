@@ -1,7 +1,7 @@
-export class SignUpController {
+import type { HttpResponse, HttpRequest } from '../protocols/http'
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/class-methods-use-this
-  handle(httpRequest: any): any {
+export class SignUpController {
+  handle(httpRequest: HttpRequest): HttpResponse {
     if (!httpRequest.body.name) {
       return {
         statusCode: 400,
