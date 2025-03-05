@@ -13,16 +13,16 @@ interface SignUpControllerParams {
   addAccount: AddAccount
 }
 
-export class SignUpController implements Controller{
+export class SignUpController implements Controller {
   private readonly emailValidator: EmailValidator
   private readonly addAccount: AddAccount
 
-  constructor({ emailValidator, addAccount }: SignUpControllerParams) {
+  constructor ({ emailValidator, addAccount }: SignUpControllerParams) {
     this.emailValidator = emailValidator
     this.addAccount = addAccount
   }
 
-  handle(httpRequest: HttpRequest): HttpResponse {
+  async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const requiredFields = ['name', 'email', 'password', 'passwordConfirmation']
       for (const field of requiredFields) {
@@ -38,7 +38,7 @@ export class SignUpController implements Controller{
       if (password !== passwordConfirmation) {
         return badRequest(new InvalidParamError('passwordConfirmation'))
       }
-      const account = this.addAccount.add({ name, email, password })
+      const account = await this.addAccount.add({ name, email, password })
       return ok(account)
     } catch {
       return serverError()

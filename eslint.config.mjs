@@ -19,7 +19,7 @@ export default [
       quotes: ['warn', 'single'],
       'eol-last': ['warn', 'always'],
       '@typescript-eslint/no-unsafe-argument': 'warn',
-      'space-before-function-paren': ['error', 'never'],
+      'space-before-function-paren': ['error', 'always'],
       '@typescript-eslint/no-magic-numbers': 'off',
       'eslint-comments/require-description': 'off',
       '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
@@ -32,7 +32,9 @@ export default [
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/prefer-destructuring': 'off',
-      '@typescript-eslint/no-unsafe-assignment': 'off'
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/return-await': 'off',
+      'promise/avoid-new': 'off'
     }
   }
 ]
