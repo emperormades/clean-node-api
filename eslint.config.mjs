@@ -15,8 +15,9 @@ export default [
   },
   {
     rules: {
-      semi: ['error', 'never'],
-      quotes: ['error', 'single'],
+      semi: ['warn', 'never'],
+      quotes: ['warn', 'single'],
+      'eol-last': ['warn', 'always'],
       '@typescript-eslint/no-unsafe-argument': 'warn',
       'space-before-function-paren': ['error', 'never'],
       '@typescript-eslint/no-magic-numbers': 'off',
