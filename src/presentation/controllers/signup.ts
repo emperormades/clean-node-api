@@ -5,7 +5,7 @@ import type {
   EmailValidator,
   HttpRequest,
   HttpResponse
-} from '../protocols'
+} from '../interfaces'
 
 export class SignUpController implements Controller{
   private readonly emailValidator: EmailValidator
