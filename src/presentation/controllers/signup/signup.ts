@@ -6,7 +6,7 @@ import type {
   EmailValidator,
   HttpRequest,
   HttpResponse
-} from '../../interfaces'
+} from '../../contracts'
 
 interface SignUpControllerParams {
   emailValidator: EmailValidator

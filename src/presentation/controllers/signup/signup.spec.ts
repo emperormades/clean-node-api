@@ -1,6 +1,6 @@
 import type { AccountModel, AddAccount, AddAccountModel } from '../../../domain/usecases'
 import { InvalidParamError, MissingParamError, ServerError } from '../../errors'
-import type { EmailValidator } from '../../interfaces'
+import type { EmailValidator } from '../../contracts'
 import { SignUpController } from './signup'
 
 
