@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
-const config = required('./jest.config')
+import config from './jest.config.js'
 config.testMatch = ['**/*.spec.ts']
 export default config

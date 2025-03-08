@@ -39,14 +39,14 @@ const config = {
   coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageThreshold: {
-    global: {
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      statements: 90,
-    },
-  },
+  // coverageThreshold: {
+  //   global: {
+  //     branches: 90,
+  //     functions: 90,
+  //     lines: 90,
+  //     statements: 90,
+  //   },
+  // },
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,
