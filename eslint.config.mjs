@@ -36,7 +36,8 @@ export default [
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/return-await': 'off',
       '@typescript-eslint/init-declarations': 'off',
-      '@typescript-eslint/no-misused-promises': 'off'
+      '@typescript-eslint/no-misused-promises': 'off',
+      '@typescript-eslint/no-floating-promises': 'off'
     }
   }
 ]
