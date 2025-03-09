@@ -34,7 +34,8 @@ export default [
       '@typescript-eslint/prefer-destructuring': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/return-await': 'off',
-      'promise/avoid-new': 'off'
+      'promise/avoid-new': 'off',
+      '@typescript-eslint/init-declarations': 'off'
     }
   }
 ]
