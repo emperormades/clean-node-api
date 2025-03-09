@@ -1,5 +1,10 @@
-import type { Encrypter } from '../../contracts'
-import { DbAddAccount } from './db-add-account'
+import type {
+  AccountRepositoryModel,
+  AddAccountRepository,
+  AddAccountRepositoryModel,
+  Encrypter
+} from '../../../src/application/contracts'
+import { DbAddAccount } from '../../../src/application/usecases/add-account'
 
 class EncrypterStub implements Encrypter {
   async encrypt (value: string): Promise<string> {
@@ -7,17 +12,35 @@ class EncrypterStub implements Encrypter {
   }
 }
 
+class AddAccountRepositoryStub implements AddAccountRepository {
+  async add (account: AddAccountRepositoryModel): Promise<AccountRepositoryModel> {
+    const fakeAccount = {
+      id: 'valid_id',
+      name: 'valid_name',
+      email: 'valid_email',
+      password: 'hashed_password'
+    }
+    return new Promise(resolve => { resolve(fakeAccount) })
+  }
+}
+
 interface SutTypes {
   sut: DbAddAccount
   encrypterStub: Encrypter
+  addAccountRepositoryStub: AddAccountRepository
 }
 
 const makeSut = (): SutTypes => {
   const encrypterStub = new EncrypterStub()
-  const sut = new DbAddAccount(encrypterStub)
+  const addAccountRepositoryStub = new AddAccountRepositoryStub()
+  const sut = new DbAddAccount({
+    encrypter: encrypterStub,
+    addAccountRepository: addAccountRepositoryStub
+  })
   return {
     sut,
-    encrypterStub
+    encrypterStub,
+    addAccountRepositoryStub
   }
 }
 
