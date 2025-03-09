@@ -3,19 +3,15 @@ import type {
   AddAccountRepository,
   AddAccountRepositoryModel
 } from '../../../../application/contracts'
-import { MongoHelper } from '../helpers'
+import { type MapperAccountRepositoryModel, MongoHelper } from '../helpers'
+
 
 export class AccountMongoRepository implements AddAccountRepository {
   async add (accountData: AddAccountRepositoryModel): Promise<AccountRepositoryModel> {
     const accountCollection = MongoHelper.getCollection('accounts')
     const result = await accountCollection.insertOne(accountData)
-    const insertedDocument = await accountCollection.findOne({ _id: result.insertedId })
-    const account: AccountRepositoryModel = {
-      id: insertedDocument._id.toString(),
-      name: insertedDocument.name,
-      email: insertedDocument.email,
-      password: insertedDocument.password
-    }
-    return account
+    const insertedDocument = await accountCollection
+      .findOne<MapperAccountRepositoryModel>({ _id: result.insertedId })
+    return MongoHelper.map(insertedDocument)
   }
 }

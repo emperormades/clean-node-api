@@ -1,4 +1,9 @@
-import { type Collection, MongoClient, type Db} from 'mongodb'
+import {
+  type Collection,
+  type Db,
+  type ObjectId,
+  MongoClient
+} from 'mongodb'
 
 export const MongoHelper = {
   client: null as MongoClient,
@@ -14,5 +19,13 @@ export const MongoHelper = {
   getCollection (name: string): Collection {
     const db: Db = this.client.db()
     return db.collection(name)
+  },
+
+  map: <T>(document: T & { _id: ObjectId }): Omit<T, '_id'> & { id: string } => {
+    const { _id, ...accountWithoutId } = document
+    return {
+      ...accountWithoutId,
+      id: _id.toHexString()
+    }
   }
 }
