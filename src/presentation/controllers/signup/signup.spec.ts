@@ -1,7 +1,7 @@
-import type { AccountModel, AddAccount, AddAccountModel } from '../../../src/domain/usecases/add-account'
-import type { EmailValidator } from '../../../src/presentation/contracts'
-import { SignUpController } from '../../../src/presentation/controllers/signup'
-import { InvalidParamError, MissingParamError, ServerError } from '../../../src/presentation/errors'
+import type { AddAccount, AddAccountModel, AccountModel } from '../../../domain/usecases'
+import type { EmailValidator } from '../../contracts'
+import { MissingParamError, InvalidParamError, ServerError } from '../../errors'
+import { SignUpController } from './signup'
 
 class EmailValidatorStub implements EmailValidator {
   isValid (email: string): boolean {

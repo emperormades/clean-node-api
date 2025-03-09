@@ -3,8 +3,9 @@ import type {
   AddAccountRepository,
   AddAccountRepositoryModel,
   Encrypter
-} from '../../../src/application/contracts'
-import { DbAddAccount } from '../../../src/application/usecases/add-account'
+} from '../../contracts'
+import { DbAddAccount } from './db-add-account'
+
 
 class EncrypterStub implements Encrypter {
   async encrypt (value: string): Promise<string> {

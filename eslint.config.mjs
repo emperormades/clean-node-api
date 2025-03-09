@@ -18,10 +18,11 @@ export default [
       semi: ['warn', 'never'],
       quotes: ['warn', 'single'],
       'eol-last': ['warn', 'always'],
-      '@typescript-eslint/no-unsafe-argument': 'warn',
+      'promise/avoid-new': 'off',
       'space-before-function-paren': ['error', 'always'],
-      '@typescript-eslint/no-magic-numbers': 'off',
       'eslint-comments/require-description': 'off',
+      '@typescript-eslint/no-magic-numbers': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'warn',
       '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
       '@typescript-eslint/no-unnecessary-condition': 'off',
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
@@ -34,8 +35,8 @@ export default [
       '@typescript-eslint/prefer-destructuring': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/return-await': 'off',
-      'promise/avoid-new': 'off',
-      '@typescript-eslint/init-declarations': 'off'
+      '@typescript-eslint/init-declarations': 'off',
+      '@typescript-eslint/no-misused-promises': 'off'
     }
   }
 ]
