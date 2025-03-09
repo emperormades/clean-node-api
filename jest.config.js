@@ -31,6 +31,7 @@ const config = {
     '/dist/',
     '/coverage/',
     '/src/domain/', // Ignora arquivos do domain
+    '/src/main/', // Ignora arquivos do main
     '/.*/contracts/', // Ignora qualquer pasta chamada "contracts"
     '/src/.*/index\\.ts$', // Ignora arquivos index.ts
   ],

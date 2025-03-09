@@ -1,9 +1,10 @@
+import type { ObjectId } from 'mongodb'
 import type {
   AccountRepositoryModel,
   AddAccountRepository,
   AddAccountRepositoryModel
 } from '../../../../application/contracts'
-import { type MapperAccountRepositoryModel, MongoHelper } from '../helpers'
+import { MongoHelper } from '../helpers'
 
 
 export class AccountMongoRepository implements AddAccountRepository {
@@ -14,4 +15,11 @@ export class AccountMongoRepository implements AddAccountRepository {
       .findOne<MapperAccountRepositoryModel>({ _id: result.insertedId })
     return MongoHelper.map(insertedDocument)
   }
+}
+
+export interface MapperAccountRepositoryModel {
+  _id: ObjectId
+  name: string
+  email: string
+  password: string
 }
