@@ -21,6 +21,7 @@ export default [
       'promise/avoid-new': 'off',
       'space-before-function-paren': ['error', 'always'],
       'eslint-comments/require-description': 'off',
+      'no-console': 'off',
       '@typescript-eslint/no-magic-numbers': 'off',
       '@typescript-eslint/no-unsafe-argument': 'warn',
       '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
