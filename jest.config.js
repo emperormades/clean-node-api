@@ -33,6 +33,7 @@ const config = {
     '/src/domain/', // Ignora arquivos do domain
     '/.*/contracts/', // Ignora qualquer pasta chamada "contracts"
     '/src/.*/index\\.ts$', // Ignora arquivos index.ts
+    '/src/main/server.ts', // Ignora o arquivo server.ts
   ],
 
   // Indicates which provider should be used to instrument code for coverage
